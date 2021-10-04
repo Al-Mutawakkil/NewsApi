@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,12 @@
 		1D2AE548270A90D600EEFFF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AE51D270A90D400EEFFF1 /* ContentView.swift */; };
 		1D2AE549270A90D600EEFFF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2AE51E270A90D500EEFFF1 /* Assets.xcassets */; };
 		1D2AE54A270A90D600EEFFF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2AE51E270A90D500EEFFF1 /* Assets.xcassets */; };
+		1D2AE55B270A915A00EEFFF1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D2AE55A270A915A00EEFFF1 /* SDWebImageSwiftUI */; };
+		1D2AE55E270A923A00EEFFF1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 1D2AE55D270A923A00EEFFF1 /* SwiftyJSON */; };
+		1D2AE564270A98B000EEFFF1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AE563270A98B000EEFFF1 /* News.swift */; };
+		1D2AE565270A98B000EEFFF1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AE563270A98B000EEFFF1 /* News.swift */; };
+		1D2AE567270A9B3500EEFFF1 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AE566270A9B3500EEFFF1 /* NewsViewModel.swift */; };
+		1D2AE568270A9B3500EEFFF1 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AE566270A9B3500EEFFF1 /* NewsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,8 @@
 		1D2AE53E270A90D600EEFFF1 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2AE542270A90D600EEFFF1 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		1D2AE544270A90D600EEFFF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D2AE563270A98B000EEFFF1 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		1D2AE566270A9B3500EEFFF1 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2AE55E270A923A00EEFFF1 /* SwiftyJSON in Frameworks */,
+				1D2AE55B270A915A00EEFFF1 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +108,10 @@
 		1D2AE51B270A90D400EEFFF1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				1D2AE51C270A90D400EEFFF1 /* NewsApiApp.swift */,
-				1D2AE51D270A90D400EEFFF1 /* ContentView.swift */,
-				1D2AE51E270A90D500EEFFF1 /* Assets.xcassets */,
+				1D2AE561270A985200EEFFF1 /* View */,
+				1D2AE560270A94D600EEFFF1 /* ViewModel */,
+				1D2AE55F270A94D000EEFFF1 /* Model */,
+				1D2AE562270A986600EEFFF1 /* Base */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -151,6 +162,39 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		1D2AE55F270A94D000EEFFF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D2AE563270A98B000EEFFF1 /* News.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D2AE560270A94D600EEFFF1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D2AE566270A9B3500EEFFF1 /* NewsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1D2AE561270A985200EEFFF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D2AE51D270A90D400EEFFF1 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D2AE562270A986600EEFFF1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1D2AE51C270A90D400EEFFF1 /* NewsApiApp.swift */,
+				1D2AE51E270A90D500EEFFF1 /* Assets.xcassets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +211,10 @@
 			dependencies = (
 			);
 			name = "NewsApi (iOS)";
+			packageProductDependencies = (
+				1D2AE55A270A915A00EEFFF1 /* SDWebImageSwiftUI */,
+				1D2AE55D270A923A00EEFFF1 /* SwiftyJSON */,
+			);
 			productName = "NewsApi (iOS)";
 			productReference = 1D2AE523270A90D500EEFFF1 /* NewsApi.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +306,10 @@
 				Base,
 			);
 			mainGroup = 1D2AE516270A90D400EEFFF1;
+			packageReferences = (
+				1D2AE559270A915A00EEFFF1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				1D2AE55C270A923A00EEFFF1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 1D2AE524270A90D500EEFFF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -308,8 +360,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2AE564270A98B000EEFFF1 /* News.swift in Sources */,
 				1D2AE547270A90D600EEFFF1 /* ContentView.swift in Sources */,
 				1D2AE545270A90D600EEFFF1 /* NewsApiApp.swift in Sources */,
+				1D2AE567270A9B3500EEFFF1 /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +371,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2AE565270A98B000EEFFF1 /* News.swift in Sources */,
 				1D2AE548270A90D600EEFFF1 /* ContentView.swift in Sources */,
 				1D2AE546270A90D600EEFFF1 /* NewsApiApp.swift in Sources */,
+				1D2AE568270A9B3500EEFFF1 /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +752,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D2AE559270A915A00EEFFF1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+		1D2AE55C270A923A00EEFFF1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D2AE55A270A915A00EEFFF1 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D2AE559270A915A00EEFFF1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		1D2AE55D270A923A00EEFFF1 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D2AE55C270A923A00EEFFF1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D2AE517270A90D400EEFFF1 /* Project object */;
 }
