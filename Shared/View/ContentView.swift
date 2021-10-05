@@ -14,25 +14,33 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       List(newsViewModel.data) { item in
-        HStack {
-          if item.image != "" {
-            WebImage(url: URL(string: item.image))
-              .resizable()
-              .scaledToFill()
-              .frame(width: 120, height: 170)
-              .background(Image("loader")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 60, height: 30))
-              .cornerRadius(10)
-          }
-          VStack {
-            Text(item.title)
-              .font(.headline)
-            Text(item.description)
-              .font(.caption)
-          }.frame(height: 170)
-        }
+        NavigationLink(
+          destination: NewsDetail(news: item),
+          label: {
+            HStack {
+              if item.image != "" {
+                WebImage(url: URL(string: item.image))
+                  .resizable()
+                  .scaledToFill()
+                  .frame(width: 120, height: 170)
+                  .background(Image("loader")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 60, height: 30))
+                  .cornerRadius(10)
+              } else {
+                Image("loader")
+              }
+              VStack(alignment: .leading, spacing: 10) {
+                Text(item.title)
+                  .bold()
+                  .lineLimit(2)
+                Text(item.title)
+                  .font(.subheadline)
+                  .lineLimit(4)
+              }
+            }
+          })
       }
       .navigationBarTitle("News")
     }

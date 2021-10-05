@@ -13,7 +13,7 @@ class NewsViewModel: ObservableObject {
   @Published var data = [News]()
   
   init() {
-    let url = "https://newsapi.org/v2/top-headlines?country=id&apiKey=4ef4f277b85b4ba8b3f84a79e1289ede"
+    let url = ""
     
     let session = URLSession(configuration: .default)
     
